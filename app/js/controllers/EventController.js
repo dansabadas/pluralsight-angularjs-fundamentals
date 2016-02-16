@@ -3,7 +3,7 @@
 eventsApp.controller('EventController',
   function EventController($scope, eventData) {
     $scope.sortorder = 'name';
-    $scope.event = eventData.getEvent(function () {
+    eventData.getEvent(function (event) {
       $scope.event = event;
     });
 
