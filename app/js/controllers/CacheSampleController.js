@@ -7,7 +7,7 @@ eventsApp.controller('CacheSampleController',
     };
 
     $scope.readFromCache = function (key) {
-      return myCache.get(key, value);
+      return myCache.get(key);
     };
 
     $scope.getCacheStats = function () {
