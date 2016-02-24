@@ -2,15 +2,18 @@
 <html lang="en" ng-app="eventsApp">
 <head>
     <meta charset="utf-8">
-    <title>Locale Sample</title>
+    <title>Filter Sample</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/app.css"/>
 </head>
 <body>
 <div class="container">
-    <div ng-controller="LocaleSampleController" style="padding:20px;">
+    <div ng-controller="FilterSampleController" style="padding:20px;">
 
-        <h3>{{myDate | date:myFormat}}</h3>
+        Duration 1: {{data.duration1}}<br/>
+        Duration 2: {{data.duration2}}<br/>
+        Duration 3: {{data.duration3}}<br/>
+        Duration 4: {{data.duration4}}<br/>
 
     </div>
 </div>
@@ -20,8 +23,9 @@
 <script src="/lib/angular/angular-resource.js"></script>
 <script src="/lib/angular/angular-locale_es.js"></script>
 <script src="/js/app.js"></script>
-<script src="/js/controllers/LocaleSampleController.js"></script>
-<script src="js/services/ExceptionHandler.js"></script>
+<script src="/js/controllers/FilterSampleController.js"></script>
+<script src="/js/filters.js"></script>
+<script src="/js/services/ExceptionHandler.js"></script>
 <script src="/lib/bootstrap.min.js"></script>
 
 </body>
