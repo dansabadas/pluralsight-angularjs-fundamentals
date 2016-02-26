@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.IO;
+using System.Linq;
 using System.Web.Hosting;
 using System.Web.Http;
 
@@ -23,8 +24,13 @@ namespace AppData.Controllers
 
     public void Post(string id, JObject eventData)
     {
-      var path = HostingEnvironment.MapPath("/");
-      File.WriteAllText(path + "../app/data/event/" + id + ".json", eventData.ToString(Formatting.None));
+      var path = HostingEnvironment.MapPath("/") + "../app/data/event/";
+
+      var directoryInfo = new DirectoryInfo(path);
+      var maxJsonId = string.IsNullOrEmpty(id) || int.Parse(id) <= 0
+        ? (directoryInfo.GetFiles("*.json").Select(fileInfo => int.Parse(fileInfo.Name.Replace(".json", string.Empty))).Max() + 1).ToString()
+        : id;
+      File.WriteAllText(path + maxJsonId + ".json", eventData.ToString(Formatting.None));
     }
   }
 }

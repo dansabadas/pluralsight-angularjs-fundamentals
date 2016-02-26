@@ -7,7 +7,7 @@ eventsApp.factory('eventData', function ($resource) { //$http
         return resource.get({ id: 1 });  // this is for REST services, works like a promise but is not a promise as it returns synchronously!
       },
       save: function (event) {
-        event.id = 999;
+        event.id = '0';
         return resource.save(event);
       }
     };
