@@ -2,9 +2,9 @@
 eventsApp.factory('eventData', function ($resource) { //$http
   var resource = $resource('/data/event/:id', { id: '@id' });
     return {
-      getEvent: function() {
+      getEvent: function(id) {
         //return $http({ method: 'GET', url: '/data/event/1' });
-        return resource.get({ id: 1 });  // this is for REST services, works like a promise but is not a promise as it returns synchronously!
+        return resource.get({ id: id });  // this is for REST services, works like a promise but is not a promise as it returns synchronously!
       },
       save: function (event) {
         event.id = '0';

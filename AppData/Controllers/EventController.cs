@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Web.Hosting;
 using System.Web.Http;
 
@@ -29,6 +30,7 @@ namespace AppData.Controllers
         return GetAllJsonEventsAsArray();
       }
 
+      Thread.Sleep(2000);
       return GetSingleJsonFile(id);
     }
 
