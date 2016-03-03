@@ -19,7 +19,12 @@ var eventsApp = angular.module('eventsApp', ['ngResource', 'ngRoute']) //, 'ngCo
           return promise;
         }
       }
-    }).otherwise({ redirectTo: '/events' });
+    }).when('/sampleDirective',
+            {
+              templateUrl: 'templates/SampleDirective.html',
+              controller: 'SampleDirectiveController'
+            })
+      .otherwise({ redirectTo: '/events' });
 
     $locationProvider.html5Mode(true);
   })
