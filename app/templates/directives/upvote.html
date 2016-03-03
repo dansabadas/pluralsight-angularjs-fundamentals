@@ -1,0 +1,11 @@
+<div class="span0 well votingWidget">
+    <div class="votingButton" ng-click="upvote()"><!--calls upvote moethod as defined on upvote.js directive, which in turn calls whatever is specified in the attribute in the master page -->
+        <i class="icon-chevron-up icon-white"></i>
+    </div>
+    <div class="badge badge-inverse">
+        <div>{{count}}</div>
+    </div>
+    <div class="votingButton" ng-click="downvote()">
+        <i class="icon-chevron-down"></i>
+    </div>
+</div>
